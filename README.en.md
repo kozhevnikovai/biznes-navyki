@@ -18,7 +18,15 @@
 
 The skills work in Russian: instructions, triggers and outputs are in Russian, because that is where they are used.
 
-## Skills
+<p align="center"><img src="docs/img/skills.png" alt="12 skills" width="100%"></p>
+
+## Install in 3 steps
+
+1. Download the ZIP of the skill you need from the [latest release](https://github.com/kozhevnikovai/biznes-navyki/releases/latest).
+2. In Claude, open Settings → Skills and upload the ZIP.
+3. Describe the task in plain words: *“Make a commercial proposal for a client: …”*. Claude picks up the skill on its own.
+
+## Features
 
 | Skill | What it does | Example |
 |---|---|---|
@@ -35,7 +43,7 @@ The skills work in Russian: instructions, triggers and outputs are in Russian, b
 | [claim-reply](skills/claim-reply/SKILL.md) | Reply to a customer claim: consumer law and contract, deadlines, risks | [view](skills/claim-reply/references/example.md) |
 | [debt-reminder](skills/debt-reminder/SKILL.md) | Letters to a debtor: reminder → formal claim with penalty calculation | [view](skills/debt-reminder/references/example.md) |
 
-## Install
+## Other ways to install
 
 **Claude Code:**
 
@@ -53,6 +61,18 @@ git clone https://github.com/kozhevnikovai/biznes-navyki.git && bash biznes-navy
 - `evals/` — 20 [promptfoo](https://www.promptfoo.dev/) test cases: `npx promptfoo@latest eval -c evals/promptfooconfig.yaml` (needs `ANTHROPIC_API_KEY`; without a key, the `evals` workflow runs the same tasks on a local Qwen3 4B model with rule-based checks).
 
 References to laws are guidance, **not legal advice**. Always review the output before sending it to a client.
+
+## FAQ
+
+**Is it free?** Yes, MIT license. You can adapt the skills to your company.
+
+**Only for Claude?** The skills follow the open Agent Skills standard and work in Claude, Codex and other agents. In a plain chat you can paste `SKILL.md` as an instruction.
+
+**Do the skills send my data anywhere?** No. A skill is an instruction text; only the AI you work with sees your data.
+
+## Security
+
+Instructions hidden in input data (a review, a brief, an email thread) are not executed: automated tests check this for all 12 skills. Legal references are guidance, not legal advice.
 
 ## Author
 
