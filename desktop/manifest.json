@@ -3,8 +3,8 @@
   "name": "kozhevnikovai",
   "display_name": "Инструменты kozhevnikovai",
   "version": "1.3.0",
-  "description": "Одна установка для всех инструментов kozhevnikovai: Аудитор сайтов, Протоколист, Тендерный помощник и 12 бизнес-навыков.",
-  "long_description": "Отметьте нужные продукты в настройках — расширение само скачает их из официальных релизов GitHub, проверит контрольную сумму SHA-256, установит и будет обновлять. Аудитор сайтов проверяет сайты и конкурентов, Протоколист превращает записи встреч в протоколы, Тендерный помощник разбирает госзакупки 44-ФЗ и 223-ФЗ. Бизнес-навыки (КП, ответы на отзывы, вакансии, регламенты, скрипты звонков и другие) — готовые команды в меню «+». Всё работает на вашем компьютере.",
+  "description": "Одна установка для всех инструментов kozhevnikovai: Аудитор сайтов, Протоколист, Тендерный помощник, Контроль звонков и 12 бизнес-навыков.",
+  "long_description": "Отметьте нужные продукты в настройках — расширение само скачает их из официальных релизов GitHub, проверит контрольную сумму SHA-256, установит и будет обновлять. Аудитор сайтов проверяет сайты и конкурентов, Протоколист превращает записи встреч в протоколы, Тендерный помощник разбирает госзакупки 44-ФЗ и 223-ФЗ, Контроль звонков оценивает звонки менеджеров по скрипту продаж. Бизнес-навыки (КП, ответы на отзывы, вакансии, регламенты, скрипты звонков и другие) — готовые команды в меню «+». Всё работает на вашем компьютере.",
   "author": { "name": "Egor Kozhevnikov", "url": "https://github.com/kozhevnikovai" },
   "repository": { "type": "git", "url": "https://github.com/kozhevnikovai/biznes-navyki" },
   "homepage": "https://github.com/kozhevnikovai/biznes-navyki/tree/main/desktop",
@@ -12,7 +12,7 @@
   "support": "https://github.com/kozhevnikovai/biznes-navyki/issues",
   "icon": "icon.png",
   "license": "MIT",
-  "keywords": ["russian", "business", "seo", "meetings", "tenders", "skills"],
+  "keywords": ["russian", "business", "seo", "meetings", "tenders", "calls", "skills"],
   "server": {
     "type": "node",
     "entry_point": "server/index.mjs",
@@ -23,11 +23,13 @@
         "KZ_AUDITOR": "${user_config.auditor}",
         "KZ_PROTOKOLIST": "${user_config.protokolist}",
         "KZ_TENDER": "${user_config.tender}",
+        "KZ_ZVONKI": "${user_config.zvonki}",
         "KZ_AUTO_UPDATE": "${user_config.auto_update}",
         "KZ_CHROME_PATH": "${user_config.chrome_path}",
         "KZ_CRUX_KEY": "${user_config.crux_key}",
         "KZ_PROTOKOLIST_OUT": "${user_config.protokolist_out}",
-        "KZ_TENDER_OUT": "${user_config.tender_out}"
+        "KZ_TENDER_OUT": "${user_config.tender_out}",
+        "KZ_ZVONKI_OUT": "${user_config.zvonki_out}"
       }
     }
   },
@@ -42,7 +44,10 @@
     { "name": "list_tasks", "description": "Протоколист: задачи из всех встреч" },
     { "name": "analyze_tender", "description": "Тендерный помощник: разбор закупки по номеру или файлам" },
     { "name": "tender_results", "description": "Тендерный помощник: итоги закупки — победитель и снижение цены" },
-    { "name": "tender_changes", "description": "Тендерный помощник: что изменилось с прошлого разбора" }
+    { "name": "tender_changes", "description": "Тендерный помощник: что изменилось с прошлого разбора" },
+    { "name": "transcribe_call", "description": "Контроль звонков: локальная расшифровка звонка и метрики" },
+    { "name": "save_review", "description": "Контроль звонков: проверка оценки по цитатам, балл и упущенная сделка" },
+    { "name": "period_report", "description": "Контроль звонков: сводка отдела и отчёты по менеджерам" }
   ],
   "tools_generated": true,
   "prompts_generated": true,
@@ -50,11 +55,13 @@
     "auditor": { "type": "boolean", "title": "Аудитор сайтов", "description": "SEO, конверсия, стиль, технологии и законы РФ; сравнение с конкурентами", "default": true, "required": false },
     "protokolist": { "type": "boolean", "title": "Протоколист (Windows, macOS)", "description": "Запись встречи → протокол с решениями и задачами. Модели распознавания и ИИ скачиваются при первом использовании (~3–10 ГБ)", "default": true, "required": false },
     "tender": { "type": "boolean", "title": "Тендерный помощник", "description": "Разбор закупок 44-ФЗ и 223-ФЗ с цитатами, расчёты, сроки, черновики писем", "default": true, "required": false },
+    "zvonki": { "type": "boolean", "title": "Контроль звонков (Windows, macOS)", "description": "Звонки менеджеров → оценка по скрипту продаж, возражения, упущенные сделки. Модели распознавания и ИИ скачиваются при первом использовании", "default": true, "required": false },
     "auto_update": { "type": "boolean", "title": "Обновлять автоматически", "description": "Проверять новые версии при запуске Claude", "default": true, "required": false },
     "chrome_path": { "type": "string", "title": "Путь к браузеру для Аудитора (необязательно)", "description": "Оставьте пустым — найдём Chrome, Edge или Яндекс Браузер сами", "default": "", "required": false },
     "crux_key": { "type": "string", "title": "Ключ CrUX API для Аудитора (необязательно)", "description": "Скорость у реальных посетителей: бесплатный ключ Google Cloud → Chrome UX Report API", "sensitive": true, "default": "", "required": false },
     "protokolist_out": { "type": "directory", "title": "Папка для протоколов (необязательно)", "description": "Оставьте пустой — Документы/Протоколист", "default": "", "required": false },
-    "tender_out": { "type": "directory", "title": "Папка для отчётов по закупкам (необязательно)", "description": "Оставьте пустой — Документы/Тендерный помощник", "default": "", "required": false }
+    "tender_out": { "type": "directory", "title": "Папка для отчётов по закупкам (необязательно)", "description": "Оставьте пустой — Документы/Тендерный помощник", "default": "", "required": false },
+    "zvonki_out": { "type": "directory", "title": "Папка для отчётов по звонкам (необязательно)", "description": "Оставьте пустой — Документы/Контроль звонков", "default": "", "required": false }
   },
   "compatibility": { "platforms": ["win32", "darwin", "linux"], "runtimes": { "node": ">=20.0.0" } }
 }

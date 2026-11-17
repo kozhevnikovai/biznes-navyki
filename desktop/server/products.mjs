@@ -4,6 +4,7 @@ export const PRODUCTS = [
   { id: "auditor", title: "Аудитор сайтов", repo: "kozhevnikovai/auditor-saitov", asset: () => /^site-audit-ru\.mcpb$/, config: { chrome_path: "KZ_CHROME_PATH", crux_key: "KZ_CRUX_KEY" }, min: "1.3.0" },
   { id: "protokolist", title: "Протоколист", repo: "kozhevnikovai/protokolist", asset: () => new RegExp(`^protokolist-${plat}-${process.arch}\\.mcpb$`), config: { output_dir: "KZ_PROTOKOLIST_OUT" }, platforms: ["win32", "darwin"], min: "1.3.0" },
   { id: "tender", title: "Тендерный помощник", repo: "kozhevnikovai/tender-pomoshnik", asset: () => new RegExp(`^tender-pomoshnik-${plat}-${process.arch}\\.mcpb$`), config: { output_dir: "KZ_TENDER_OUT" }, min: "1.3.0" },
+  { id: "zvonki", title: "Контроль звонков", repo: "kozhevnikovai/kontrol-zvonkov", asset: () => new RegExp(`^kontrol-zvonkov-${plat}-${process.arch}\\.mcpb$`), config: { output_dir: "KZ_ZVONKI_OUT" }, platforms: ["win32", "darwin"], min: "1.0.0" },
 ];
 
 /** a < b по SemVer (только числа major.minor.patch; «v» в начале и суффиксы игнорируются) */

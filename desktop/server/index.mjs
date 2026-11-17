@@ -12,7 +12,7 @@ import { cleanup, install, installed, latest } from "./install.mjs";
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const VERSION = JSON.parse(readFileSync(join(ROOT, "manifest.json"), "utf8")).version;
 const on = (v, def = true) => (v === undefined || v === "" || /^\$\{/.test(v) ? def : !/^(false|0|no)$/i.test(v));
-const ENABLED = { auditor: on(process.env.KZ_AUDITOR), protokolist: on(process.env.KZ_PROTOKOLIST), tender: on(process.env.KZ_TENDER) };
+const ENABLED = { auditor: on(process.env.KZ_AUDITOR), protokolist: on(process.env.KZ_PROTOKOLIST), tender: on(process.env.KZ_TENDER), zvonki: on(process.env.KZ_ZVONKI) };
 const AUTO_UPDATE = on(process.env.KZ_AUTO_UPDATE);
 const log = (...a) => process.stderr.write(`[kozhevnikovai] ${a.join(" ")}\n`);
 
@@ -163,7 +163,7 @@ const SKILLS = loadSkills();
 // ---------- собственные инструменты ----------
 const OWN_TOOLS = [
   { name: "kozhevnikovai_status", description: "Какие инструменты kozhevnikovai установлены, их версии и ошибки установки", inputSchema: { type: "object", properties: {} } },
-  { name: "kozhevnikovai_install", description: "Установить или обновить продукт kozhevnikovai сейчас: auditor (Аудитор сайтов), protokolist (Протоколист), tender (Тендерный помощник)", inputSchema: { type: "object", properties: { product: { type: "string", enum: PRODUCTS.map((p) => p.id) } }, required: ["product"] } },
+  { name: "kozhevnikovai_install", description: "Установить или обновить продукт kozhevnikovai сейчас: auditor (Аудитор сайтов), protokolist (Протоколист), tender (Тендерный помощник), zvonki (Контроль звонков)", inputSchema: { type: "object", properties: { product: { type: "string", enum: PRODUCTS.map((p) => p.id) } }, required: ["product"] } },
 ];
 
 function statusText() {

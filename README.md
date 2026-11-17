@@ -96,7 +96,7 @@ git clone https://github.com/kozhevnikovai/biznes-navyki.git && bash biznes-navy
 
 **Claude (веб, десктоп, мобильное приложение)** — скачайте ZIP нужного навыка в [Releases](https://github.com/kozhevnikovai/biznes-navyki/releases) и загрузите его в разделе навыков (Skills) в настройках Claude.
 
-**Всё сразу в Claude Desktop** — общий пакет `kozhevnikovai.mcpb` со [страницы релизов](https://github.com/kozhevnikovai/biznes-navyki/releases/latest): навыки как команды в меню «+», а также Аудитор сайтов, Протоколист и Тендерный помощник — одной установкой. Подробнее — [desktop/README.md](desktop/README.md).
+**Всё сразу в Claude Desktop** — общий пакет `kozhevnikovai.mcpb` со [страницы релизов](https://github.com/kozhevnikovai/biznes-navyki/releases/latest): навыки как команды в меню «+», а также Аудитор сайтов, Протоколист, Тендерный помощник и Контроль звонков — одной установкой. Подробнее — [desktop/README.md](desktop/README.md).
 
 **Claude Code** — `/plugin marketplace add kozhevnikovai/biznes-navyki`, затем `/plugin install biznes-navyki@kozhevnikovai`.
 
@@ -124,6 +124,7 @@ git clone https://github.com/kozhevnikovai/biznes-navyki.git && bash biznes-navy
 
 - [Протоколист](https://github.com/kozhevnikovai/protokolist) — запись встречи → протокол, локально
 - [Тендерный помощник](https://github.com/kozhevnikovai/tender-pomoshnik) — разбор госзакупок 44-ФЗ и 223-ФЗ с цитатами
+- [Контроль звонков](https://github.com/kozhevnikovai/kontrol-zvonkov) — оценка звонков менеджеров по скрипту продаж, упущенные сделки
 - [Аудитор сайтов](https://github.com/kozhevnikovai/auditor-saitov) — аудит сайта и конкурентов, 152-ФЗ
 
 Об уязвимостях — приватно, см. [SECURITY.md](SECURITY.md).

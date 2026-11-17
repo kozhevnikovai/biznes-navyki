@@ -1,6 +1,6 @@
 # Инструменты kozhevnikovai для Claude Desktop
 
-Одна установка вместо нескольких расширений: [Аудитор сайтов](https://github.com/kozhevnikovai/auditor-saitov), [Протоколист](https://github.com/kozhevnikovai/protokolist), [Тендерный помощник](https://github.com/kozhevnikovai/tender-pomoshnik) и 12 [бизнес-навыков](https://github.com/kozhevnikovai/biznes-navyki).
+Одна установка вместо нескольких расширений: [Аудитор сайтов](https://github.com/kozhevnikovai/auditor-saitov), [Протоколист](https://github.com/kozhevnikovai/protokolist), [Тендерный помощник](https://github.com/kozhevnikovai/tender-pomoshnik), [Контроль звонков](https://github.com/kozhevnikovai/kontrol-zvonkov) и 12 [бизнес-навыков](https://github.com/kozhevnikovai/biznes-navyki).
 
 ## Установка
 
@@ -17,7 +17,7 @@
 - Бизнес-навыки — команды в меню «+» → «Инструменты kozhevnikovai»: выберите навык и опишите задачу.
 - Спросите Claude «какие инструменты kozhevnikovai установлены?» — он вызовет `kozhevnikovai_status`.
 
-Протоколист работает на Windows и macOS. Модели распознавания и ИИ Протоколист и Тендерный помощник скачивают при первом использовании.
+Протоколист и Контроль звонков работают на Windows и macOS. Модели распознавания и ИИ Протоколист, Тендерный помощник и Контроль звонков скачивают при первом использовании.
 
 Если вы уже ставили отдельные расширения продуктов — удалите их, чтобы инструменты не дублировались.
 
