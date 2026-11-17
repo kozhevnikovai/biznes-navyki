@@ -3,8 +3,8 @@
 <p align="center">
 <a href="https://github.com/kozhevnikovai/biznes-navyki/releases"><img src="https://img.shields.io/github/v/release/kozhevnikovai/biznes-navyki?color=161616" alt="Release"></a>
 <a href="https://github.com/kozhevnikovai/biznes-navyki/actions/workflows/validate.yml"><img src="https://img.shields.io/github/actions/workflow/status/kozhevnikovai/biznes-navyki/validate.yml?label=validate&color=161616" alt="Validate"></a>
-<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-161616" alt="MIT"></a>
-<a href="README.md"><img src="https://img.shields.io/badge/lang-Русский-FF5A1F" alt="Русский"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-16181D" alt="MIT"></a>
+<a href="README.md"><img src="https://img.shields.io/badge/lang-Русский-5E6470" alt="Русский"></a>
 </p>
 
 # Biznes-navyki — AI skills for business in Russia

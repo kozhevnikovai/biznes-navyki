@@ -3,8 +3,8 @@
 <p align="center">
 <a href="https://github.com/kozhevnikovai/biznes-navyki/releases"><img src="https://img.shields.io/github/v/release/kozhevnikovai/biznes-navyki?color=161616&label=версия" alt="Версия"></a>
 <a href="https://github.com/kozhevnikovai/biznes-navyki/actions/workflows/validate.yml"><img src="https://img.shields.io/github/actions/workflow/status/kozhevnikovai/biznes-navyki/validate.yml?label=проверка&color=161616" alt="Проверка"></a>
-<a href="LICENSE"><img src="https://img.shields.io/badge/лицензия-MIT-161616" alt="MIT"></a>
-<a href="README.en.md"><img src="https://img.shields.io/badge/lang-English-FF5A1F" alt="English"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/лицензия-MIT-16181D" alt="MIT"></a>
+<a href="README.en.md"><img src="https://img.shields.io/badge/lang-English-5E6470" alt="English"></a>
 </p>
 
 # Бизнес-навыки — ИИ-навыки для бизнеса в России
