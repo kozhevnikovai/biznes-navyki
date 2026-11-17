@@ -7,7 +7,7 @@ mkdirSync(dir, { recursive: true });
 cpSync("desktop/manifest.json", `${dir}/manifest.json`);
 cpSync("desktop/server", `${dir}/server`, { recursive: true });
 cpSync("desktop/README.md", `${dir}/README.md`);
-cpSync("docs/img/icon.png", `${dir}/icon.png`);
+cpSync("desktop/icon.png", `${dir}/icon.png`);
 cpSync("LICENSE", `${dir}/LICENSE`);
 cpSync("skills", `${dir}/skills`, { recursive: true });
 mkdirSync("dist", { recursive: true });
