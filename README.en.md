@@ -13,8 +13,8 @@
 
 - **Free and open source** — MIT license.
 - **Built for the Russian market** — Yandex Maps, 2GIS, Ozon, Wildberries, hh.ru; respects Russian advertising (38-FZ), personal data (152-FZ) and labor law.
-- **Tested** — 36 eval cases for quality, rule compliance and prompt-injection resistance, run in GitHub Actions.
-- **No made-up facts** — prices, case studies and specs are never invented; gaps are marked `[уточнить]` ("to clarify").
+- **Has evals** — 37 eval cases for quality, rule compliance and prompt-injection resistance. The full rubric-based run is on Claude; without an API key 21 of them run on a local model, checking only rules that need no AI judge.
+- **Fewer made-up facts** — skills tell the model not to invent prices, case studies, specs or actions taken; gaps are marked `[уточнить]` ("to clarify"). Still review the result.
 
 The skills work in Russian: instructions, triggers and outputs are in Russian, because that is where they are used.
 
