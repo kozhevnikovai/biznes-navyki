@@ -16,8 +16,10 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/build-desktop.mjs
+      - run: cd dist && sha256sum *.zip kozhevnikovai.mcpb > SHA256SUMS && cat SHA256SUMS
       - uses: softprops/action-gh-release@v3
         with:
           files: |
             dist/*.zip
             dist/kozhevnikovai.mcpb
+            dist/SHA256SUMS
